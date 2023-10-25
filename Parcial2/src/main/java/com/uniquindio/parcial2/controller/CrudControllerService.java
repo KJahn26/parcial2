@@ -2,6 +2,8 @@ package com.uniquindio.parcial2.controller;
 
 import com.uniquindio.parcial2.model.base;
 
+import java.util.ArrayList;
+
 public class CrudControllerService {
 
     ModelFactoryController modelFactoryController;
@@ -10,9 +12,11 @@ public class CrudControllerService {
             modelFactoryController= ModelFactoryController.getInstance();
     }
 
-    public base obtenerbase(){
-        return modelFactoryController.getBase1();
+    public ArrayList<base> obtenerbase(){
+        return modelFactoryController.getBase1().getBases();
     }
+
+
 
     public boolean agregarbase(base b){
         return modelFactoryController.agregarbase(b);
