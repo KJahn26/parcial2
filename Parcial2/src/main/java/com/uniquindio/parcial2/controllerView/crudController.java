@@ -77,13 +77,15 @@ public class crudController {
     }
 
     void initDataBinding() {
-       /* tablecolumn1.setCellValueFactory(cellData-> new SimpleStringProperty(cellData.getValue().));
-        tablecolumn2.setCellValueFactory(cellData-> new SimpleStringProperty(cellData.getValue().));
-        tablecolumn3.setCellValueFactory(cellData-> new SimpleStringProperty(cellData.getValue().));
-        tablecolumn4.setCellValueFactory(cellData-> new SimpleStringProperty(cellData.getValue().));
-        tablecolumn5.setCellValueFactory(cellData-> new SimpleStringProperty(cellData.getValue().));
-        tablecolumn6.setCellValueFactory(cellData-> new SimpleStringProperty(cellData.getValue().));
-        */
+        tablecolumn1.setCellValueFactory(cellData-> new SimpleStringProperty(cellData.getValue().getNombre()));
+        tablecolumn2.setCellValueFactory(cellData-> new SimpleStringProperty(cellData.getValue().getApellido()));
+        tablecolumn3.setCellValueFactory(cellData-> new SimpleStringProperty(cellData.getValue().getCorreo()));
+        tablecolumn4.setCellValueFactory(cellData-> new SimpleStringProperty(cellData.getValue().getCedula()));
+        tablecolumn5.setCellValueFactory(cellData-> new SimpleStringProperty(cellData.getValue().getTelefono()));
+        //tablecolumn6.setCellValueFactory(cellData-> new SimpleStringProperty(cellData.getValue().));
+
+
+
     }
 
     void obtenerbase() {
@@ -112,8 +114,7 @@ public class crudController {
     }
 
     private void crearbase() {
-        base b = new base();
-
+        base b = crearBase();
         if (datosValidos(b)) {
             if (crudService.agregarbase(b)) {
                 bases.add(b);
@@ -124,6 +125,16 @@ public class crudController {
         } else {
 
         }
+    }
+    private base crearBase ()
+    {
+        base b = new base();
+        b.setNombre(txtdato1.getText());
+        b.setApellido(txtdato2.getText());
+        b.setCorreo(txtdato3.getText());
+        b.setCedula(txtdato3.getText());
+        b.setTelefono(txtdato5.getText());
+        return b;
     }
 
     private void limpiarCamposUsuario() {
@@ -136,7 +147,7 @@ public class crudController {
 
     private boolean datosValidos(base usuarioDto) {
         String mensaje = "";
-       /* if(usuarioDto.nombre() == null || usuarioDto.nombre().equals(""))
+        /*if(usuarioDto.nombre() == null || usuarioDto.nombre().equals(""))
             mensaje += "El nombre es invalido \n" ;
         if(usuarioDto.cedula() == null || usuarioDto.cedula().equals(""))
             mensaje += "El documento es invalido \n" ;

@@ -1,12 +1,28 @@
 package com.uniquindio.parcial2.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class base {
+public class base  implements Serializable {
+    private static final long serialVersionUID = 2L;
+    public base (){}
+
+    public String getDato() {
+        return dato;
+    }
+
+    ArrayList<base> bases= new ArrayList<>();
+    private String codigo="";
+    private String correo="";
+    private String nombre="";
+    private String apellido="";
+    private String cedula="";
+    private String telefono="";
+
 
     String dato;
 
-    ArrayList<base> bases= new ArrayList<>();
+
 
     public ArrayList<base> getBases() {
         return bases;
@@ -24,6 +40,55 @@ public class base {
         this.dato = dato;
     }
 
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public String getCedula() {
+        return cedula;
+    }
+
+    public void setCedula(String cedula) {
+        this.cedula = cedula;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+
     public boolean baseexiste(String r){
         if(verificarexistencia(r)){
             //JOptionPane.showMessage(null,"el objeto ya existe");
@@ -36,7 +101,7 @@ public class base {
     public boolean verificarexistencia(String r){
         boolean flag=false;
         for(base b :getBases()) {
-            if(b.getdato().equalsIgnoreCase(r)){
+            if(b.getCedula().equalsIgnoreCase(r)){
                 flag=true;
                 break;
             }
@@ -58,7 +123,7 @@ public class base {
     public base obetenerbase(String dato){
         base bas= null;
         for(base ba:getBases()){
-            if(dato.equalsIgnoreCase(ba.dato)){
+            if(dato.equalsIgnoreCase(ba.getCedula())){
                 bas=ba;
                 break;
             }

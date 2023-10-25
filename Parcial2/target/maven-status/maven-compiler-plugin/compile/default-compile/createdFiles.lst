@@ -1,0 +1,13 @@
+com\uniquindio\parcial2\crudController.class
+com\uniquindio\parcial2\controllerView\crudController.class
+com\uniquindio\parcial2\model\base.class
+com\uniquindio\parcial2\persistencia\Persistencia.class
+com\uniquindio\parcial2\controllerView\HelloController.class
+com\uniquindio\parcial2\HelloController.class
+module-info.class
+com\uniquindio\parcial2\controller\ModelFactoryController$SingletonHolder.class
+com\uniquindio\parcial2\controller\ModelFactoryController.class
+com\uniquindio\parcial2\controller\HelloControllerService.class
+com\uniquindio\parcial2\persistencia\ArchivoUtil.class
+com\uniquindio\parcial2\controller\CrudControllerService.class
+com\uniquindio\parcial2\HelloApplication.class
