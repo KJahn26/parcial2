@@ -24,7 +24,7 @@ public class ModelFactoryController {
 
         System.out.println("Invocacion Singleton");
         cargarDatosDesdeArchivos();
-        //guardarResourceXML();
+
 
 
     }
@@ -41,6 +41,7 @@ public class ModelFactoryController {
         if (!base1.baseexiste(b.getCodigo())) {
             base1.getBases().add(b);
             salvarDatosNuevosArchivo();
+            guardarResourceXML();
             return true;
         }else{
             return false;
